@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="10953" started-at="2020-06-28T12:23:25Z" finished-at="2020-06-28T12:23:36Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="10953" started-at="2020-06-28T12:23:25Z" finished-at="2020-06-28T12:23:36Z">
+      <class name="com.q_ticket.testcases.Sample">
+        <test-method status="PASS" signature="startTest()[pri:0, instance:com.q_ticket.testcases.Sample@7d9d1a19]" name="startTest" is-config="true" duration-ms="476" started-at="2020-06-28T12:23:25Z" finished-at="2020-06-28T12:23:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTest -->
+        <test-method status="PASS" signature="extentReportsDemo()[pri:0, instance:com.q_ticket.testcases.Sample@7d9d1a19]" name="extentReportsDemo" duration-ms="9199" started-at="2020-06-28T12:23:25Z" finished-at="2020-06-28T12:23:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- extentReportsDemo -->
+        <test-method status="PASS" signature="endTest()[pri:0, instance:com.q_ticket.testcases.Sample@7d9d1a19]" name="endTest" is-config="true" duration-ms="1223" started-at="2020-06-28T12:23:35Z" finished-at="2020-06-28T12:23:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
+      </class> <!-- com.q_ticket.testcases.Sample -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
