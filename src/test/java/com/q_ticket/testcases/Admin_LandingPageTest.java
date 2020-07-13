@@ -1,4 +1,8 @@
 package com.q_ticket.testcases;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -24,14 +28,33 @@ public class Admin_LandingPageTest extends Baseclass{
 		
 	}
 	
-	@Test
+	//valid login details test script
+	@Test(enabled=false)
 	public void login()
 	{
-		ExtentTestManager.startTest("login", "Test");
+		
 		obj.Login();	
-		ExtentTestManager.getTest();
-		ExtentTestManager.endTest();
+		
 	}
+	
+	//verify the landing page
+	@Test(enabled=false)
+	public void VerifyAdminlanding()
+	{
+		String text=obj.VerifyAdminHomepage();
+		String pagetext = prop.getProperty("Landingpage");
+		Assert.assertEquals(text, pagetext);
+		
+	}
+	@Test
+	public void VerifyInvalidLogin()
+	{
+		String value=obj.VerifyinvalidLogin();
+		String errormessage=prop.getProperty("errormsg");
+		Assert.assertEquals(value,errormessage );
+		
+	}
+	
 	
 	@AfterMethod
 	public void tearDown(ITestResult result){
