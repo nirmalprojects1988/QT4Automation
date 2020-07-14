@@ -1,5 +1,7 @@
 package com.q_ticket.pages;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,6 +21,8 @@ public class Admin_LandingPage extends Baseclass {
 
 	@FindBy(xpath="//h2[@class='text-center']")
 	WebElement landingpagetext;
+	@FindBy(xpath="//span[text()='Logout']")
+	WebElement logout;
 	public static String textvalue;
 	public Admin_LandingPage() {
 		PageFactory.initElements(driver, this);
@@ -43,10 +47,15 @@ public class Admin_LandingPage extends Baseclass {
 		Signinbtn.click();
 		WebDriverWait wait=new WebDriverWait(driver,10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[text()='Invalid Account']")));
-		
 		return textvalue=driver.findElement(By.xpath("//h2[text()='Invalid Account']")).getText();
-		
+			
+	}
+	public void logout()
+	{
+		Login();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		logout.click();
+		driver.navigate().back();
 		
 	}
-
 }

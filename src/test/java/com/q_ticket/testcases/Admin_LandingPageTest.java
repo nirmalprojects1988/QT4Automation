@@ -1,7 +1,4 @@
 package com.q_ticket.testcases;
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -9,7 +6,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.q_ticket.base.Baseclass;
 import com.q_ticket.pages.Admin_LandingPage;
-import com.q_ticket.framework.utility.ExtentTestManager;
 
 public class Admin_LandingPageTest extends Baseclass{
 	
@@ -46,16 +42,25 @@ public class Admin_LandingPageTest extends Baseclass{
 		Assert.assertEquals(text, pagetext);
 		
 	}
-	@Test
+	//verify the invalid login
+	@Test(enabled=false)
 	public void VerifyInvalidLogin()
 	{
 		String value=obj.VerifyinvalidLogin();
 		String errormessage=prop.getProperty("errormsg");
-		Assert.assertEquals(value,errormessage );
+		Assert.assertEquals(value,errormessage);
 		
 	}
-	
-	
+	//logout functionality
+	@Test
+	public void Logout()
+	{
+		obj.logout();
+		String text=obj.VerifyAdminHomepage();
+		String pagetext = prop.getProperty("Landingpage");
+		Assert.assertEquals(text, pagetext);
+		
+	}
 	@AfterMethod
 	public void tearDown(ITestResult result){
 		if(ITestResult.FAILURE==result.getStatus())

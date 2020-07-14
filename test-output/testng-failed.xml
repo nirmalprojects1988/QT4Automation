@@ -7,7 +7,7 @@
         <methods>
           <include name="Setup"/>
           <include name="tearDown"/>
-          <include name="VerifyInvalidLogin"/>
+          <include name="Logout"/>
         </methods>
       </class> <!-- com.q_ticket.testcases.Admin_LandingPageTest -->
     </classes>
